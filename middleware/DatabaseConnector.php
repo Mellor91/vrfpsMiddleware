@@ -19,7 +19,7 @@ function connect()
 
 function disconnect($conn)
 {
-    //Function might be necessary for cleaning up stuff so keeping
+    //Function might be necessary for cleaning up stuff... so keeping
     mysqli_close($conn);
 }
 
@@ -38,15 +38,6 @@ function queryDB($sql)
         disconnect($conn);
         return $result;
     }
-}
-
-function toJSON($result)
-{
-    while($row = $result->fetch_array(MYSQL_ASSOC))
-        {
-            $JSONArray[] = $row;
-        }
-    return json_encode($JSONArray); 
 }
 
 ?>
